@@ -17,9 +17,8 @@ git clone https://github.com/kztakemoto/breast_cancer.git
 cd breast_cancer
 pip install -r requirements.txt
 ```
-4. [Kaggle](https://www.kaggle.com/c/histopathologic-cancer-detection)からデータをダウンロード）します。
-データは``histopathologic-cancer-detection``ディレクトリに格納されているとします。
-このディレクトリを、現在のディレクトリ（つまり``breast_cancer``）においておきましょう。
+4. [Kaggle](https://www.kaggle.com/c/histopathologic-cancer-detection)からデータをダウンロードします。
+データは``histopathologic-cancer-detection``ディレクトリに格納されているとして、そのディレクトリを現在のディレクトリ（つまり``breast_cancer``）においておきます。
 
 ## データの整形
 後で使いやすいように、画像データやラベルをnpyファイルに保存しておきます。``data``の中に格納されます。
