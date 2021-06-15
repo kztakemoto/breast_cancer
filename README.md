@@ -21,7 +21,7 @@ pip install -r requirements.txt
 データは``histopathologic-cancer-detection``ディレクトリに格納されているとして、そのディレクトリを現在のディレクトリ（つまり``breast_cancer``）においておきます。
 
 ## データの整形
-後で使いやすいように、画像データやラベルをnpyファイルに保存しておきます。``data``の中に格納されます。
+後で使いやすいように、画像データやラベルをnpyファイルに保存しておきます。``data``ディレクトリに格納されます。
 ```
 python make_data.py
 ```
