@@ -9,7 +9,6 @@ from keras.callbacks import ModelCheckpoint
 from keras.optimizers import SGD
 from keras.models import Model
 
-from sklearn.metrics import roc_auc_score, confusion_matrix, classification_report, roc_curve, auc
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
@@ -98,39 +97,3 @@ plt.ylabel("acc")
 plt.xlabel("epoch")
 plt.legend(["train", "valid"], loc="upper left")
 plt.savefig('acc_performance.png')
-
-
-### Predition ###
-preds = model.predict_generator(data_gen(val_list, id_label_map, 1, 96, do_inference_aug), steps = len(val_list))
-preds = np.array(preds)
-prob_1 = preds[:,1:2].flatten()
-y_preds = np.argmax(preds, axis=1)
-
-#Taking 0.5 as threshold for classification
-true = df_val['label'].values
-
-# printing AUC_ROC score
-print(roc_auc_score(true,prob_1))
-
-# Plotting the AUC_ROC curve
-fpr, tpr, threshold = roc_curve(true, prob_1)
-roc_auc = auc(fpr, tpr)
-
-plt.title('Receiver Operating Characteristic')
-plt.plot(fpr, tpr, 'g', label = 'AUC = %0.2f' % roc_auc)
-plt.legend(loc = 'lower right')
-plt.plot([0, 1], [0, 1],'r--')
-plt.xlim([0, 1])
-plt.ylim([0, 1])
-plt.ylabel('True Positive Rate')
-plt.xlabel('False Positive Rate')
-plt.show()
-plt.savefig('octresnet50_auc_roc.png')
-
-# printing and plotting confusion matrix
-cm = confusion_matrix(true,y_preds)
-plot_confusion_matrix(cm,['no_tumor_tissue', 'has_tumor_tissue'])
-
-# classification report consist of precision, recall, f1-score
-report = classification_report(true,y_preds,target_names=['no_tumor_tissue', 'has_tumor_tissue'])
-print(report)
