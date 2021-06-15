@@ -22,8 +22,7 @@ from model.OctaveResNet import OctaveResNet50
 ### config ###
 img_size = (96,96,3)
 batch_size = 64
-#epochs = 38
-epochs = 1
+epochs = 38
 
 ### load image data ###
 # reading the training data CSV file (may need to modify the path)
