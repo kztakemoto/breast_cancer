@@ -28,7 +28,7 @@ python make_data.py
 ```
 
 ## モデルの訓練
-[Octave-ResNet-50](https://docs.openvinotoolkit.org/latest/omz_models_model_octave_resnet_50_0_125.html)アーキテクチャを利用しています。
+[Octave-ResNet-50](https://docs.openvinotoolkit.org/latest/omz_models_model_octave_resnet_50_0_125.html)のモデルアーキテクチャを利用しています。
 ImageNetで事前訓練された重みは利用していません。
 モデル重みは``weight``に``octresnet_one_cycle_model.h5``という名前で保存されます。
 ```
