@@ -49,7 +49,7 @@ id_label_map = {k:v for k,v in zip(df.id.values, df.label.values)}
 
 # model configuration
 # can use different models such as ResNeXt50, Seresnet50 by replacing them.
-base_model = OctaveResNet50(include_top=False, weights=None, input_shape=img_size, classes=2, initial_strides=False)
+base_model = OctaveResNet50(include_top=False, weights=None, input_shape=img_size, initial_strides=False)
 x = base_model.output
 out1 = GlobalMaxPooling2D()(x)
 out2 = GlobalAveragePooling2D()(x)
