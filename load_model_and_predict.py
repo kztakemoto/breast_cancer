@@ -10,7 +10,7 @@ from utils.data_generator import do_inference_aug
 from model.OctaveResNet import OctaveResNet50
 
 # model configuration (Octave ResNet50)
-base_model = OctaveResNet50(include_top=False, weights=None, input_shape=(96,96,3), classes=2, initial_strides=False)
+base_model = OctaveResNet50(include_top=False, weights=None, input_shape=(96,96,3), initial_strides=False)
 x = base_model.output
 out1 = GlobalMaxPooling2D()(x)
 out2 = GlobalAveragePooling2D()(x)
