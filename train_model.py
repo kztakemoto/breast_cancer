@@ -26,7 +26,7 @@ batch_size = 64
 epochs = 1
 
 ### load image data ###
-# reading the training data CSV file (need to modify the path)
+# reading the training data CSV file (may need to modify the path)
 df = pd.read_csv("./histopathologic-cancer-detection/train_labels.csv")
 df_train, df_val = train_test_split(df, test_size=0.1, stratify= df['label'], random_state=123)
 
@@ -37,12 +37,12 @@ print("Valid data: " + str(len(df_val[df_val["label"] == 1]) + len(df_val[df_val
 print("True positive in validation data: " +  str(len(df_val[df_val["label"] == 1])))
 print("True negative in validation data: " +  str(len(df_val[df_val["label"] == 0])))
 
-# Train List (need to modify the path)
+# Train List (may need to modify the path)
 train_list = df_train['id'].tolist()
 train_list = train_list[:1000]
 train_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
 
-# Validation List (need to modify the path)
+# Validation List (may need to modify the path)
 val_list = df_val['id'].tolist()
 val_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in val_list]
 
