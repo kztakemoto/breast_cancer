@@ -11,7 +11,7 @@
 conda create -n breast_cancer python=3.6
 conda activate breast_cancer
 ```
-3. レポジトリをクローンして、必要なパッケージをインストールしておきましょう。
+3. レポジトリをクローンして、必要なライブラリをインストールしておきましょう。
 ```
 git clone https://github.com/kztakemoto/breast_cancer.git
 cd breast_cancer
