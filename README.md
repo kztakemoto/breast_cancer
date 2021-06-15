@@ -6,20 +6,18 @@
 ## 準備
 1. [Miniconda](https://docs.conda.io/en/latest/miniconda.html)をインストールしましょう。
 
-1. 環境を準備しましょう。
+2. 環境を準備しましょう。
 ```
 conda create -n breast_cancer python=3.6
 conda activate breast_cancer
 ```
-
-1. レポジトリをクローンして、必要なパッケージをインストールしておきましょう。
+3. レポジトリをクローンして、必要なパッケージをインストールしておきましょう。
 ```
 git clone https://github.com/kztakemoto/breast_cancer.git
 cd breast_cancer
 pip install -r requirements.txt
 ```
-
-1. データをダウンロードしましょう。
+4. データをダウンロードしましょう。
 [Kaggle Histopathologic Cancer Detection](https://www.kaggle.com/c/histopathologic-cancer-detection)からデータをダウンロードして、
 現在のディレクトリ（つまり``breast_cancer``）においておきましょう。
 
