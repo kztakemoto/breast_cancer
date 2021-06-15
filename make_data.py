@@ -21,11 +21,11 @@ print("True negative in validation data: " +  str(len(df_val[df_val["label"] == 
 
 # Train List (need to modify the path)
 train_list = df_train['id'].tolist()
-train_list = ['../histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
+train_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
 
 # Validation List (need to modify the path)
 val_list = df_val['id'].tolist()
-val_list = ['../histopathologic-cancer-detection/train/'+ name + ".tif" for name in val_list]
+val_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in val_list]
 
 #### save validation data in npy format
 # image data
