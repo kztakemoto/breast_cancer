@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split, KFold
 from utils.data_generator import do_inference_aug
 
 # reading the training data CSV file (need to modify the path)
-df = pd.read_csv("../histopathologic-cancer-detection/train_labels.csv")
+df = pd.read_csv("./histopathologic-cancer-detection/train_labels.csv")
 df_train, df_val = train_test_split(df, test_size=0.1, stratify= df['label'], random_state=123)
 
 print("Train data: " + str(len(df_train[df_train["label"] == 1]) + len(df_train[df_train["label"] == 0])))
