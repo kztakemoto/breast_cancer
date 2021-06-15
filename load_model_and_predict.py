@@ -1,4 +1,3 @@
-# Training code for simple hold-out train-val split
 import numpy as np
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Dense, Dropout, BatchNormalization, GlobalAveragePooling2D, GlobalMaxPooling2D, concatenate
