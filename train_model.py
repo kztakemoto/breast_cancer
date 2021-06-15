@@ -27,7 +27,7 @@ epochs = 1
 
 ### load image data ###
 # reading the training data CSV file (need to modify the path)
-df = pd.read_csv("../histopathologic-cancer-detection/train_labels.csv")
+df = pd.read_csv("./histopathologic-cancer-detection/train_labels.csv")
 df_train, df_val = train_test_split(df, test_size=0.1, stratify= df['label'], random_state=123)
 
 print("Train data: " + str(len(df_train[df_train["label"] == 1]) + len(df_train[df_train["label"] == 0])))
@@ -40,11 +40,11 @@ print("True negative in validation data: " +  str(len(df_val[df_val["label"] == 
 # Train List (need to modify the path)
 train_list = df_train['id'].tolist()
 train_list = train_list[:1000]
-train_list = ['../histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
+train_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
 
 # Validation List (need to modify the path)
 val_list = df_val['id'].tolist()
-val_list = ['../histopathologic-cancer-detection/train/'+ name + ".tif" for name in val_list]
+val_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in val_list]
 
 # Dictionary mapping Image IDs to corresponding labels....used in data_generator.py
 id_label_map = {k:v for k,v in zip(df.id.values, df.label.values)}
