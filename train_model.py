@@ -39,7 +39,6 @@ print("True negative in validation data: " +  str(len(df_val[df_val["label"] == 
 
 # Train List (may need to modify the path)
 train_list = df_train['id'].tolist()
-train_list = train_list[:1000]
 train_list = ['./histopathologic-cancer-detection/train/'+ name + ".tif" for name in train_list]
 
 # Validation List (may need to modify the path)
