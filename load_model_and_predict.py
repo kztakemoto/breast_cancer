@@ -41,6 +41,6 @@ y_val = np.load('data/y_val.npy')
 preds = np.array(model.predict(X_val))
 
 # compute accuracy
-acc = np.sum(np.argmax(preds, axis = 1) == np.argmax(y_val, axis = 1)) / len(y_val)
+acc = np.sum(np.argmax(preds, axis=1) == np.argmax(y_val, axis=1)) / len(y_val)
 print(" Accuracy [val]: {:.2f}%".format(acc * 100.0))
 
