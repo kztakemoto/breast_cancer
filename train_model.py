@@ -8,6 +8,8 @@ from keras.layers import Dense, Dropout, BatchNormalization, GlobalAveragePoolin
 from keras.callbacks import ModelCheckpoint
 from keras.optimizers import SGD
 from keras.models import Model
+from keras.applications.inception_v3 import InceptionV3
+from keras.applications.resnet50 import ResNet50
 
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -49,6 +51,9 @@ id_label_map = {k:v for k,v in zip(df.id.values, df.label.values)}
 # model configuration
 # can use different models such as ResNeXt50, Seresnet50 by replacing them.
 base_model = OctaveResNet50(include_top=False, weights=None, input_shape=img_size, initial_strides=False)
+# for example,
+#base_model = InceptionV3(include_top=False, weights=None, input_shape=img_size)
+#base_model = ResNet50(include_top=False, weights=None, input_shape=img_size)
 x = base_model.output
 out1 = GlobalMaxPooling2D()(x)
 out2 = GlobalAveragePooling2D()(x)
